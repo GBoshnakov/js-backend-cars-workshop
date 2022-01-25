@@ -1,0 +1,24 @@
+{
+  "name": "workshop-1-cars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GBoshnakov/js-backend-cars-workshop.git"
+  },
+  "keywords": [],
+  "author": "GB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GBoshnakov/js-backend-cars-workshop/issues"
+  },
+  "homepage": "https://github.com/GBoshnakov/js-backend-cars-workshop#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2"
+  }
+}

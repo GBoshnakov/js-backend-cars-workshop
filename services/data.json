@@ -1,0 +1,20 @@
+{
+  "asdasd-asd": {
+    "name": "BMW",
+    "description": "Came from Switzerland. Full service history. Facelift model, xDrive",
+    "imageUrl": "https://d1udfgtrdnzm0y.cloudfront.net/media/catalog/product/cache/2/image/1875x1250/9df78eab33525d08d6e5fb8d27136e95/3/d/3ddesign_carbon_urethan_bmw_3er_e90_e91_21_36449_1280x853.jpg",
+    "price": 18500
+  },
+  "880688cd-6ad4": {
+    "name": "subaru wrx",
+    "description": "4x4 2.5 turbo boxer engine",
+    "price": 3500,
+    "imageUrl": "https://hips.hearstapps.com/amv-prod-gp.s3.amazonaws.com/gearpatrol/wp-content/uploads/2019/04/2006-Subaru-Impreza-WRX-STi-gear-patrol-feature.jpg"
+  },
+  "34ec6c45-019c": {
+    "name": "subaru forester",
+    "description": "4x4 2.0 petrol",
+    "price": 35000,
+    "imageUrl": "https://cdn.jdpower.com/JDPA_2021%20Subaru%20Forester%20Limited%20Gray%20Front%20Quarter%20Right.jpg"
+  }
+}
