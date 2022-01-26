@@ -1,6 +1,6 @@
 {
   "asdasd-asd": {
-    "name": "BMW",
+    "name": "BMW E91",
     "description": "Came from Switzerland. Full service history. Facelift model, xDrive",
     "imageUrl": "https://d1udfgtrdnzm0y.cloudfront.net/media/catalog/product/cache/2/image/1875x1250/9df78eab33525d08d6e5fb8d27136e95/3/d/3ddesign_carbon_urethan_bmw_3er_e90_e91_21_36449_1280x853.jpg",
     "price": 18500
@@ -16,5 +16,11 @@
     "description": "4x4 2.0 petrol",
     "price": 35000,
     "imageUrl": "https://cdn.jdpower.com/JDPA_2021%20Subaru%20Forester%20Limited%20Gray%20Front%20Quarter%20Right.jpg"
+  },
+  "c6ff2c0d-9c55": {
+    "name": "subaru wrx sti",
+    "description": "4x4 2.5 turbo boxer engine",
+    "imageUrl": "https://hips.hearstapps.com/roa.h-cdn.co/assets/cm/14/47/546b30f0d8567_-_2015_subaru_wrxsti_042-lg.jpg?crop=1xw:0.8888888888888888xh;center,top&resize=1200:*",
+    "price": 7000
   }
 }

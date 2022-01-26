@@ -63,6 +63,29 @@ async function publishCar(car) {
     await write(cars);
 }
 
+async function editCar(id, car) {
+    const cars = await read();
+
+    if (cars.hasOwnProperty(id)) {
+        cars[id] = car;
+        await write(cars);
+    } else {
+        throw new Error('The ID does not exist in the database');
+    }
+}
+
+async function deleteById(id) {
+    const cars = await read();
+
+    if (cars.hasOwnProperty(id)) {
+        delete cars[id];
+        await write(cars);
+    } else {
+        throw new Error('The ID does not exist in the database');
+    }
+
+}
+
 
 function nextId() {
     return 'xxxxxxxx-xxxx'.replace(/x/g, () => (Math.random() * 16 | 0).toString(16)); 
@@ -73,7 +96,9 @@ module.exports = () => (req, res, next) => {
     req.storage = {
         getAll,
         getById,
-        publishCar
+        publishCar,
+        editCar,
+        deleteById
     };
     next();
 };

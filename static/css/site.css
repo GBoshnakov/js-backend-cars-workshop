@@ -11,7 +11,7 @@ header ul {
 }
 
 img {
-    height: 200px;
+    height: 250px;
     width: auto;
 }
 
@@ -43,6 +43,7 @@ header ul li {
 header ul li a {
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 24px;
     color: white;
     font-weight: bold;
     margin: 0 1em;
@@ -76,6 +77,8 @@ div.cube {
     background: white;
     width: 400px;
     vertical-align: top;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 div.cube p.name {
@@ -94,12 +97,14 @@ p.name {
 
 button, main a.btn {
     border: none;
-    padding: 8px;
+    /* padding: 5px; */
     text-align: center;
+    text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
-    width: 43%;
+    width: 180px;
+    line-height: 50px;
     margin: 12px;
     margin-left: 6%;
     border-radius: 4px;
@@ -111,13 +116,22 @@ button:hover {
     background-color: #0B2133;
     color: white;
     cursor: pointer;
+    transition: 0.75s;
+
 }
 
 a {
     text-decoration: underline;
     color: white;
     text-transform: uppercase;
-    padding: 5px 8px;
+    /* padding: 5px; */
+}
+
+a.btn:hover {
+    background-color: #0B2133;
+    transition: 0.75s;
+
+
 }
 
 
@@ -242,6 +256,7 @@ footer {
 }
 
 .description {
+    display: none;
     padding: 15px;
 }
 
