@@ -11,7 +11,7 @@ module.exports = {
     },
     async post(req, res) {
         const id = req.params.id;
-        console.log(id)
+
         try {
             await req.storage.deleteById(id);
             res.redirect('/');

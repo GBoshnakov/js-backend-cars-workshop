@@ -1,0 +1,22 @@
+const Accessory = require('../models/Accessory');
+const { accessoryMapper } = require('./util');
+
+
+
+async function getAll() {
+    const data = await Accessory.find({});
+
+    return data.map(accessoryMapper);
+}
+
+async function createAccessory(accessory) {
+    await Accessory.create(accessory);
+}
+
+module.exports = () => (req, res, next) => {
+    req.accessory = {
+        getAll,
+        createAccessory
+    };
+    next();
+};

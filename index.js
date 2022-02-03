@@ -1,36 +1,50 @@
 const express = require('express');
 const hbs = require('express-handlebars');
 
+const initDb = require('./models/index');
+
 const carsService = require('./services/cars');
+const accessoryService = require('./services/accessory');
+
 const { about } = require('./controllers/about');
-const create = require('./controllers/create');
-const edit = require('./controllers/edit')
-const deleteCar = require('./controllers/delete')
+const createCar = require('./controllers/create');
+const createAccessory = require('./controllers/createAccessory');
+const edit = require('./controllers/edit');
+const deleteCar = require('./controllers/delete');
+const attach = require('./controllers/attach');
 const { details } = require('./controllers/details');
 const { home } = require('./controllers/home');
 const { notFound } = require('./controllers/notFound');
 
 
-const app = express();
-app.engine('hbs', hbs.create({
-    extname: '.hbs'
-}).engine);
+start()
 
-app.set('view engine', 'hbs');
-app.use(carsService())
-app.use(express.urlencoded({ extended: true }));
+async function start() {
+    await initDb();
 
-app.use('/static', express.static('static'));
-app.get('/', home);
-app.get('/about', about);
-app.get('/details/:id', details)
+    const app = express();
+    app.engine('hbs', hbs.create({
+        extname: '.hbs'
+    }).engine);
 
-app.route('/create').get(create.get).post(create.post);
-app.route('/edit/:id').get(edit.get).post(edit.post);
-app.route('/delete/:id').get(deleteCar.get).post(deleteCar.post);
+    app.set('view engine', 'hbs');
+    app.use(carsService())
+    app.use(accessoryService());
+    app.use(express.urlencoded({ extended: true }));
 
-app.all('*', notFound)
+    app.use('/static', express.static('static'));
+    app.get('/', home);
+    app.get('/about', about);
+    app.get('/details/:id', details)
+
+    app.route('/create').get(createCar.get).post(createCar.post);
+    app.route('/edit/:id').get(edit.get).post(edit.post);
+    app.route('/delete/:id').get(deleteCar.get).post(deleteCar.post);
+    app.route('/createAccessory').get(createAccessory.get).post(createAccessory.post);
+    app.route('/attach/:id').get(attach.get).post(attach.post);
+
+    app.all('*', notFound)
 
 
-app.listen(3000, () => console.log('Working on port 3000'));
-
+    app.listen(3000, () => console.log('Working on port 3000'));
+}

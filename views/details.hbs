@@ -2,8 +2,20 @@
 <img class="cube" src="{{car.imageUrl}}">
 <div class="details">
   <p><span>Description:</span> {{car.description}}</p>
-  <p><span>Price:</span> {{car.price}}</p>
+  <p><span>Price:</span>£{{car.price}}</p>
   <a class="btn" href="/">Back</a>
   <a class="btn" href="/delete/{{car.id}}">Delete</a>
   <a class="btn" href="/edit/{{car.id}}">Edit</a>
+  <a class="btn" href="/attach/{{car.id}}">Attach Accessory</a>
+</div>
+
+<h2>Accessories</h2>
+<div class="accessories">
+  {{#each car.accessories}}
+  {{>accessoryTemplate}}
+
+  {{else}}
+
+  <h3 class="italic">This cube has no accessories yet...</h3>
+  {{/each}}
 </div>
