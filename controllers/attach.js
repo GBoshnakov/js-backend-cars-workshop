@@ -8,6 +8,10 @@ module.exports = {
             const allId = car.accessories.map(a => a.id.toString());
             const accessories = allAccessories.filter(a => allId.includes(a.id.toString()) == false);
 
+            if (car.owner != req.session.user.id) {
+                return res.redirect('/');
+            }
+
             res.render('attachAccessory', { title: 'Attach Accessory', car, accessories });
         } catch (error) {
             console.log(error.message);
@@ -21,7 +25,7 @@ module.exports = {
         const accessoryId = req.body.accessory;
 
         try {
-            await req.storage.attachAccessory(carId, accessoryId);
+            await req.storage.attachAccessory(carId, accessoryId, req.session.user.id);
             res.redirect('/details/' + carId);
         } catch (error) {
             console.log('Error attaching accessory');

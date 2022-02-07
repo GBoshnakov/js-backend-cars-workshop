@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 require('./Car');
 require('./Accessory');
+require('./User');
 
 async function init() {
 

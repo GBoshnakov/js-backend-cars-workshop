@@ -8,7 +8,8 @@ module.exports = {
                 name: req.body.name.toLowerCase(),
                 description: req.body.description,
                 price: Number(req.body.price),
-                imageUrl: req.body.imageUrl || undefined
+                imageUrl: req.body.imageUrl || undefined,
+                owner: req.session.user.id
             });
 
             res.redirect('/');

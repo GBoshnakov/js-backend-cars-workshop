@@ -3,10 +3,12 @@ module.exports = {
         const id = req.params.id;
         const car = await req.storage.getById(id);
 
-        res.locals = {
-            title: `CarTrader - ${car.name}`,
-            car
+        if (req.session.user && car.owner == req.session.user.id) {
+            res.locals.isOwner = true;
+        } else {
+            res.locals.isOwner = false;
         }
-        res.render('details');
+
+        res.render('details', {title: `CarTrader - ${car.name}`, car});
     }
 }
