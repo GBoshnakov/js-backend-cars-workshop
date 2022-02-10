@@ -12,7 +12,6 @@ async function register(session, username, password) {
         id: user._id,
         username
     };
-    console.log('this is sessions user', session.user)
 }
 
 async function login(session, username, password) {

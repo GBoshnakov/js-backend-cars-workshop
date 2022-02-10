@@ -43,7 +43,7 @@ async function editCar(id, owner, data) {
         throw new Error('User is not owner');
     }
 
-    car.name = car.name.toLowerCase()
+    car.name = data.name.toLowerCase()
     car.description = data.description
     car.imageUrl = data.imageUrl
     car.price = data.price

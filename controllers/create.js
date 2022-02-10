@@ -1,3 +1,5 @@
+const { mapError } = require('../services/util');
+
 module.exports = {
     get(req, res) {
         res.render('create', { title: "Publish a car" });
@@ -15,7 +17,7 @@ module.exports = {
             res.redirect('/');
         } catch (error) {
             console.log('Error writing to database');
-            res.redirect('/create');
+            res.render('create', { title: 'Publish  a car', errors: mapError(error), car: req.body });
         }
 
     }

@@ -9,7 +9,8 @@ async function init() {
     try {
         await mongoose.connect('mongodb://localhost:27017/cartrader', {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            // autoIndex: false
         });
         console.log('Database connected');
 

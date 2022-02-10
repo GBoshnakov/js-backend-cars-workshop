@@ -1,3 +1,5 @@
+const { mapError } = require('../services/util');
+
 module.exports = {
     async get(req, res) {
         const id = req.params.id;
@@ -15,17 +17,16 @@ module.exports = {
     async post(req, res) {
         const id = req.params.id;
         try {
-            await req.storage.editCar(id, req.session.user.id,{
+            await req.storage.editCar(id, req.session.user.id, {
                 name: req.body.name,
                 description: req.body.description,
                 imageUrl: req.body.imageUrl,
                 price: Number(req.body.price)
             });
-            res.redirect('/');
+            res.redirect('/details/' + id);
         } catch (error) {
-            console.error(error.message);
-            res.redirect('/');
+            res.render('edit', { title: 'Edit Listing', errors: mapError(error), car: req.body });
         }
-        
+
     }
 }

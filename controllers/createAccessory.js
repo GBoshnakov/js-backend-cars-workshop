@@ -1,3 +1,6 @@
+const { mapError } = require('../services/util');
+
+
 module.exports = {
     get(req, res) {
         res.render('createAccessory', { title: 'Create an Accessory' });
@@ -16,8 +19,7 @@ module.exports = {
 
         } catch (error) {
             console.log('Error writing to database');
-            console.log(error.message);
-            res.redirect('/createAccessory')
+            res.render('createAccessory', { tile: 'Create an Accessory', errors: mapError(error), accessory: req.body })
         }
     }
 }
