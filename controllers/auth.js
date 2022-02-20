@@ -36,7 +36,7 @@ async function registerPost(req, res) {
     const { errors } = validationResult(req);
 
     try {
-        if (errors.length > 1) {
+        if (errors.length >= 1) {
             throw errors;
         }
         await req.auth.register(req.body.username, req.body.password);
